@@ -271,7 +271,7 @@ Example Request Body *required:
 
 
 ## Note on CORS
-CORS is a W3C standard that allows a server to relax the same-origin policy. It is not a security feature, CORS relaxes security. It allows a server to explicitly allow some cross-origin requests while rejecting others. An API is not safer by allowing CORS. For more information or to see how CORS functions, see the Microsoft documentation.
+CORS is a W3C standard that allows a server to relax the same-origin policy. It is not a security feature, CORS relaxes security. It allows a server to explicitly allow some cross-origin requests while rejecting others. An API is not safer by allowing CORS. For more information or to see how CORS functions, see the Microsoft documentation. The attempt at implementing cors is on the second branch to leave the first in good condition.
 
 ## Known Bugs
 - Please email the host or submit an issue/pull Request.
