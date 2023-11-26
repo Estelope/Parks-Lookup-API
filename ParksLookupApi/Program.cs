@@ -15,6 +15,29 @@ builder.Services.AddDbContext<ParkLookupApiContext>(
                     )
                   )
                 );
+                builder.Services.AddCors(options =>
+{
+    options.AddPolicy("Policy1",
+        policy =>
+        {
+            policy.WithOrigins("http://example.com",
+                                "http://www.contoso.com");
+        });
+
+
+    options.AddPolicy("AnotherPolicy",
+        policy =>
+        {
+            policy.WithOrigins("http://www.contoso.com")
+                                .AllowAnyHeader()
+                                .AllowAnyMethod();
+        });
+});
+        {
+            policy.WithOrigins("http://www.contoso.com")
+                                .AllowAnyHeader()
+                                .AllowAnyMethod();
+        };
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 

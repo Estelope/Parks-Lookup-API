@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ParkLookupApi.Models;
+using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace ParkLookupApi.Controllers
 {
@@ -16,6 +18,7 @@ namespace ParkLookupApi.Controllers
     }
 
     // GET api/parks
+     [EnableCors("Policy1")]
     [HttpGet]
     public async Task<List<Park>> Get(string location, string name, string climate)
     {
@@ -41,6 +44,7 @@ namespace ParkLookupApi.Controllers
     }
 
     // GET: api/Parks/5
+     [EnableCors("Policy1")]
     [HttpGet("{id}")]
     public async Task<ActionResult<Park>> GetPark(int id)
     {
@@ -55,6 +59,7 @@ namespace ParkLookupApi.Controllers
     }
 
     // POST api/parks
+     [EnableCors("Policy1")]
     [HttpPost]
     public async Task<ActionResult<Park>> Post([FromBody] Park park)
     {
@@ -64,6 +69,7 @@ namespace ParkLookupApi.Controllers
     }
 
         // PUT: api/Parks/5
+
     [HttpPut("{id}")]
     public async Task<IActionResult> Put(int id, Park park)
     {
