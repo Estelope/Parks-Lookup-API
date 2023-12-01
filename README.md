@@ -249,6 +249,8 @@ Example Request Body *required:
   }
 ```
 
+***note: id must be included as a URL parameter, it must match the ParkId value included in the request body in order for the update to be made.
+
 ### DELETE /api/Parks/{id}
 <table>
     <thead>
@@ -271,7 +273,11 @@ Example Request Body *required:
 
 
 ## Note on CORS
-CORS is a W3C standard that allows a server to relax the same-origin policy. It is not a security feature, CORS relaxes security. It allows a server to explicitly allow some cross-origin requests while rejecting others. An API is not safer by allowing CORS. For more information or to see how CORS functions, see the Microsoft documentation. The attempt at implementing cors is on the second branch to leave the first in good condition.
+CORS is a W3C standard that allows a server to relax the same-origin policy. It is not a security feature, CORS relaxes security. It allows a server to explicitly allow some cross-origin requests while rejecting others. An API is not safer by allowing CORS. For more information or to see how CORS functions, see the Microsoft documentation. The attempt implementing cors is on the second branch to leave the first in good condition.
+
+## implimenting CORS
+"All CORS-related work was initially done on the second branch to leave the first in good condition. Though not particularly interesting, there was some fascinating documentation on the formation of CORS and how the limitations of the same-origin policy led to the global standard. I attempted to use the built-in [EnableCors] attribute, which requires a policy reference. To access this attribute, the corresponding namespaces, using System.Web.Http; and using System.Web.Http.Cors;, will be necessary. The standard CORS policy referenced in each attribute can be seen in Program.cs and is considered a widely-used policy. With some minor tweaking, it eventually built successfully."
+
 
 ## Known Bugs
 - Please email the host or submit an issue/pull Request.
